@@ -1,3 +1,5 @@
+// src/components/FleetCard.tsx
+
 import {
   Box,
   Text,
@@ -10,7 +12,6 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { TriangleUpIcon, TriangleDownIcon, WarningIcon } from "@chakra-ui/icons";
-import { useNavigate } from "react-router-dom";
 
 type FleetCardProps = {
   location: string;
@@ -19,6 +20,7 @@ type FleetCardProps = {
   soc: string;
   performance: string;
   availability: string;
+  onClick?: () => void;
 };
 
 export default function FleetCard({
@@ -28,8 +30,8 @@ export default function FleetCard({
   soc,
   performance,
   availability,
+  onClick,
 }: FleetCardProps) {
-  const navigate = useNavigate();
   const isPositive = power.startsWith("+");
   const isNegative = power.startsWith("-");
   const socValue = parseFloat(soc.replace("%", ""));
@@ -60,7 +62,7 @@ export default function FleetCard({
 
   return (
     <Box
-      onClick={() => navigate(`/site/${location}`)}
+      onClick={onClick}
       cursor="pointer"
       bg={bg}
       color={textColor}

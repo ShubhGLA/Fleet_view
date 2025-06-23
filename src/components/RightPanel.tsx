@@ -1,4 +1,3 @@
-// src/components/RightPanel.tsx
 import {
   Box,
   Text,

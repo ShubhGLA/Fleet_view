@@ -1,4 +1,3 @@
-// src/components/Sidebar.tsx
 import { Box, VStack, IconButton } from '@chakra-ui/react';
 import {
   FiHome, FiMonitor, FiBarChart2,

@@ -1,5 +1,3 @@
-// src/components/FleetCard.tsx
-
 import {
   Box,
   Text,

@@ -1,4 +1,3 @@
-// src/components/OverviewPanel.tsx
 import {
   Box,
   Grid,

@@ -1,5 +1,3 @@
-// src/Dashboard.tsx
-
 import { Box } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 import OverviewPanel from "../components/OverviewPanel";

@@ -1,4 +1,3 @@
-// src/App.tsx
 import { Box } from '@chakra-ui/react';
 import { Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';

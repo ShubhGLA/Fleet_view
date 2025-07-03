@@ -17,9 +17,9 @@ type FleetCardProps = {
   location: string;
   status: string;
   power: string;
-  soc: string;
-  performance: string;
-  availability: string;
+  soc?: string;
+  performance?: string;
+  availability?: string;
   onClick?: () => void;
 };
 
@@ -27,14 +27,14 @@ export default function FleetCard({
   location,
   status,
   power,
-  soc,
-  performance,
-  availability,
+  soc = '',
+  performance = '',
+  availability = '',
   onClick,
 }: FleetCardProps) {
   const isPositive = power.startsWith("+");
   const isNegative = power.startsWith("-");
-  const socValue = parseFloat(soc.replace("%", ""));
+  const socValue = soc ? parseFloat(soc.replace("%", "")) : 0;
 
   const bg = useColorModeValue("white", "gray.800");
   const textColor = useColorModeValue("gray.800", "white");
@@ -96,7 +96,7 @@ export default function FleetCard({
           borderRadius="full"
         />
         <Text fontSize="sm" fontWeight="bold">
-          SOC {soc}
+          SOC {soc || "--"}
         </Text>
       </Flex>
 
@@ -124,11 +124,11 @@ export default function FleetCard({
         <Text mb={0.5}>Last 24 hours</Text>
         <Flex justify="space-between">
           <Text>Performance</Text>
-          <Text>{performance}</Text>
+          <Text>{performance || "--"}</Text>
         </Flex>
         <Flex justify="space-between">
           <Text>Availability</Text>
-          <Text>{availability}</Text>
+          <Text>{availability || "--"}</Text>
         </Flex>
         <Flex justify="space-between">
           <Text>Uptime</Text>

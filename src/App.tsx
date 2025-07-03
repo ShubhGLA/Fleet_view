@@ -5,7 +5,7 @@ import SiteDetails from './pages/SiteDetails';
 
 function App() {
   return (
-    <Box w="100vw" h="100vh" bg="gray.100">
+    <Box w="100vw" minH="100vh" bg="gray.900" m={0} p={0}>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/site/:site" element={<SiteDetails />} />
